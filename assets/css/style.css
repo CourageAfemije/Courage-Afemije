@@ -942,14 +942,7 @@ button {
     opacity 0.35s ease;
 }
 
-.clients-result__grid:has(.client-card:hover) .client-card:not(:hover) {
-  filter: blur(1.4px);
-  opacity: 0.6;
-}
-
 .clients-result__grid:has(.client-card:hover) .client-card:hover {
-  filter: blur(0);
-  opacity: 1;
   z-index: 2;
   box-shadow: 0 42px 96px rgba(15, 23, 42, 0.2);
   border-color: rgba(15, 23, 42, 0.16);
@@ -976,11 +969,6 @@ button {
 .client-card:hover .client-card__frame img {
   transform: scale(1.16);
   box-shadow: 0 28px 72px rgba(0, 0, 0, 0.26);
-}
-
-.clients-result__grid:hover .client-card {
-  filter: blur(1.4px);
-  opacity: 0.55;
 }
 
 @media (max-width: 980px) {
