@@ -924,44 +924,62 @@ button {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
+  position: relative;
+  overflow: visible;
 }
 
 .client-card {
   border-radius: var(--r-xl);
-  overflow: hidden;
-  background: linear-gradient(180deg, #0f172a 0%, #111827 100%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.16);
+  overflow: visible;
+  background: transparent;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
   transition:
-    transform 0.35s var(--ease),
     box-shadow 0.35s var(--ease),
-    border-color 0.35s var(--ease);
+    border-color 0.35s var(--ease),
+    filter 0.35s ease,
+    opacity 0.35s ease;
 }
 
-.client-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 32px 72px rgba(15, 23, 42, 0.22);
-  border-color: rgba(255, 255, 255, 0.16);
+.clients-result__grid:hover .client-card {
+  filter: blur(1.4px);
+  opacity: 0.6;
+}
+
+.clients-result__grid:hover .client-card:hover {
+  filter: blur(0);
+  opacity: 1;
+  z-index: 2;
+  box-shadow: 0 42px 96px rgba(15, 23, 42, 0.2);
+  border-color: rgba(15, 23, 42, 0.16);
 }
 
 .client-card__frame {
   position: relative;
-  min-height: 320px;
-  min-width: 350px;
-  background: #0f172a;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  min-height: 360px;
+  background: transparent;
 }
 
 .client-card__frame img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transition: transform 0.55s ease;
+  transition:
+    transform 0.55s ease,
+    box-shadow 0.55s ease;
+  transform-origin: center center;
 }
 
 .client-card:hover .client-card__frame img {
-  transform: scale(1.04);
+  transform: scale(1.55);
+  box-shadow: 0 48px 120px rgba(0, 0, 0, 0.36);
+}
+
+.clients-result__grid:hover .client-card {
+  filter: blur(1.6px);
+  opacity: 0.5;
 }
 
 @media (max-width: 980px) {
