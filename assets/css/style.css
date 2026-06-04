@@ -942,12 +942,12 @@ button {
     opacity 0.35s ease;
 }
 
-.clients-result__grid:hover .client-card {
+.clients-result__grid:has(.client-card:hover) .client-card:not(:hover) {
   filter: blur(1.4px);
   opacity: 0.6;
 }
 
-.clients-result__grid:hover .client-card:hover {
+.clients-result__grid:has(.client-card:hover) .client-card:hover {
   filter: blur(0);
   opacity: 1;
   z-index: 2;
