@@ -1,0 +1,17 @@
+# Dependencies & build output
+node_modules/
+dist/
+
+# Original source media (2.2GB of raw client footage — too large for GitHub).
+# The optimized web assets live in public/media and ARE committed.
+ assets/
+
+# Local-only artifacts
+.DS_Store
+.preview-shots/
+.qoder/
+*.local
+
+# Logs
+*.log
+npm-debug.log*
