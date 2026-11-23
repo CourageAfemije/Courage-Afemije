@@ -76,6 +76,25 @@ nav .btn{min-height:42px;padding:0 20px;font-size:15px}
 .tile .tg{font-size:14px;opacity:.7}
 .c2{background:var(--forest);color:var(--lime)}.c3{background:var(--lime);color:var(--forest)}.c4{background:#d4f2df;color:var(--forest)}.c5{background:#1d3a33;color:var(--mint)}
 .cmeta{margin-top:18px}
+.cta{display:inline-flex;align-items:center;gap:10px;margin-top:16px;padding:11px 20px;border-radius:999px;background:var(--forest);color:var(--lime);font:500 15px Inter,sans-serif;transition:gap .2s,background .2s}
+.cta i{font-style:normal;transition:transform .2s}
+.card:hover .cta,.card:focus-visible .cta{background:#000}.card:hover .cta i{transform:translateX(4px)}
+.thumb .open{position:absolute;top:12px;right:12px;z-index:2;background:var(--lime);color:var(--forest);font:600 13px Inter,sans-serif;padding:6px 12px;border-radius:999px;box-shadow:0 2px 10px rgba(0,0,0,.18)}
+.thumb.trio{position:relative}
+.jump{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px;align-items:center}
+.jump b{font-weight:500;color:var(--soft);font-size:14px;margin-right:4px}
+.jump a{text-decoration:none;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 16px;font-size:14px;color:var(--ink);white-space:nowrap}
+.jump a,.jump b{flex-shrink:0}
+.jump a:hover{background:var(--forest);color:var(--lime);border-color:var(--forest)}
+.menu{display:none;background:none;border:1px solid rgba(255,255,255,.35);color:#fff;border-radius:999px;min-height:42px;padding:0 16px;font:500 15px Inter,sans-serif;cursor:pointer}
+@media(max-width:600px){.jump{flex-wrap:nowrap;overflow-x:auto;margin-right:calc(-1*max(5vw,18px));padding-bottom:6px;scrollbar-width:none}.jump::-webkit-scrollbar{display:none}
+ .menu{display:inline-flex;align-items:center}nav .btn.lime{display:none}
+ nav.open .links{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--forest);padding:6px max(5vw,18px) 18px;border-top:1px solid rgba(255,255,255,.12)}
+ nav.open .links a{padding:14px 0;font-size:18px;border-bottom:1px solid rgba(255,255,255,.1)}
+ nav.open .links a.mcta{display:block;border:0;margin-top:12px;text-align:center;background:var(--lime);color:var(--forest);border-radius:999px;padding:14px}
+ .cta{width:100%;justify-content:center}.thumb .open{display:none}
+ nav.open{box-shadow:0 20px 40px rgba(0,0,0,.35)}}
+.links a.mcta{display:none}
 .cmeta h3{font-size:26px}
 .cmeta .lab{color:var(--soft);font-size:15px;margin-top:4px}
 .cmeta .m{display:flex;gap:22px;flex-wrap:wrap;color:var(--soft);font-size:14px;margin-top:10px}
@@ -189,8 +208,9 @@ footer{background:var(--forest);color:var(--softd);padding:24px max(5vw,18px);di
 
 <nav><div class="wrap">
  <a class="logo" href="#top">Courage <em>Afemije</em></a>
- <div class="links"><a href="#work">Work</a><a href="#process">Process</a><a href="#strategy">Strategy</a><a href="#about">About</a></div>
+ <div class="links"><a href="#work">Work</a><a href="#process">Process</a><a href="#strategy">Strategy</a><a href="#about">About</a><a class="mcta" href="#contact">Work with me</a></div>
  <a class="btn lime" href="#contact">Work with me</a>
+ <button class="menu" aria-expanded="false" aria-label="Open menu">Menu</button>
 </div></nav>
 
 <main id="home">
@@ -222,7 +242,8 @@ footer{background:var(--forest);color:var(--softd);padding:24px max(5vw,18px);di
 <section class="band" id="work" style="padding-top:0"><div class="wrap">
  <span class="label">Selected work</span>
  <div class="whead"><h2>The ads, the numbers, <em>the thinking.</em></h2>
-  <p class="lede" style="margin:0;max-width:40ch">Eight projects across beauty, fashion, streetwear and wellness. Each one shows the problem, the creative bet, and what the numbers said.</p></div>
+  <p class="lede" style="margin:0;max-width:40ch">Eight projects across beauty, fashion, streetwear and wellness. Each one shows the problem, the creative bet, and what the numbers said. Tap any project to open the full case study.</p></div>
+ <div class="jump" id="jump"></div>
  <div class="work" id="cards"></div>
 </div></section>
 
@@ -434,7 +455,10 @@ const tileCls=['c2','c3','c4','c5','c2','c3','c4','c5'];
 $('cards').innerHTML=C.map((c,i)=>{
  const th=c.thumbs?`<div class="thumb trio">${c.thumbs.map(f=>`<img src="media/${f}.jpg" alt="" loading="lazy">`).join('')}</div>`
   :`<div class="thumb"><div class="tile ${tileCls[i]}"><span class="tg">${c.label.split(' · ').slice(1).join(' · ')}</span><div><div class="big">${c.card.num}</div><div class="cap">${c.card.small}</div></div></div></div>`;
- return `<a class="card${i===0||c.wide?' wide':''}" href="#${c.id}">${th}<div class="cmeta"><div><h3>${c.title}</h3><div class="lab">${c.cardLab}</div></div><div class="m">${c.card.m.map(m=>`<span><b>${m[0]}</b>${m[1]}</span>`).join('')}</div></div></a>`}).join('');
+ return `<a class="card${i===0||c.wide?' wide':''}" href="#${c.id}">${th}<div class="cmeta"><div><h3>${c.title}</h3><div class="lab">${c.cardLab}</div></div><div class="m">${c.card.m.map(m=>`<span><b>${m[0]}</b>${m[1]}</span>`).join('')}</div><span class="cta">View case study <i>→</i></span></div></a>`}).join('');
+$('jump').innerHTML='<b>Jump to:</b>'+C.map(c=>`<a href="#${c.id}">${c.title}</a>`).join('');
+document.querySelectorAll('#cards .thumb').forEach(t=>t.insertAdjacentHTML('beforeend','<span class="open">Open case study ↗</span>'));
+{const nv=document.querySelector('nav'),mb=nv.querySelector('.menu');mb.addEventListener('click',()=>{const o=nv.classList.toggle('open');mb.setAttribute('aria-expanded',o);mb.textContent=o?'Close':'Menu'});nv.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>{nv.classList.remove('open');mb.setAttribute('aria-expanded',false);mb.textContent='Menu'}))}
 
 const sec=(h,body,full)=>`<section class="sec${full?' full':''}"><h3>${h}</h3><div>${body}</div></section>`;
 function renderCase(c){
