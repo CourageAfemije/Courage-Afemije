@@ -139,6 +139,7 @@ footer{background:var(--forest);color:var(--softd);padding:24px max(5vw,18px);di
 .gal img,.gal video{width:100%;display:block;border-radius:12px;background:var(--forest)}
 .gal video{aspect-ratio:1;object-fit:cover}
 .gal video.v{aspect-ratio:9/13}.gal video.w{aspect-ratio:16/9}
+.gal video,.gal video.v,.gal video.w,.winner .hm video{height:auto;object-fit:contain}
 .gal figcaption{padding:10px 2px 0;font-size:14px;color:var(--soft)}
 .gal figcaption b{display:block;color:var(--ink);font-weight:600}
 .gal figcaption q{display:block}
@@ -484,6 +485,9 @@ const cp=$('copy');
 cp.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('afemijecourage@gmail.com');cp.textContent='Copied ✓'}catch(e){cp.textContent='afemijecourage@gmail.com'}setTimeout(()=>cp.textContent='Copy email',2500)});
 document.addEventListener('play',e=>{const v=e.target;if(v.tagName!=='VIDEO'||!v.closest('.gal'))return;document.querySelectorAll('.gal video').forEach(o=>{if(o!==v)o.pause()})},true);
 }
+const VDIM={"fbl-buckle-swap.mp4":"720/1280","fbl-ugc-belts.mp4":"720/1280","fbl-ugc-bridge.mp4":"720/1280","fbl-ugc-cast.mp4":"720/1280","fbl-ugc-city.mp4":"720/1280","fbl-ugc-collection.mp4":"720/1280","fbl-ugc-fits.mp4":"720/1280","vn-ai-gift-couple.mp4":"960/540","vn-ai-gift-surprise.mp4":"960/540","vn-ai-gift-vertical.mp4":"720/1080","vn-ai-unboxing.mp4":"720/720","vn-led-diary-hook1.mp4":"720/720","vn-led-diary-hook2.mp4":"720/720","vn-led-diary-hook2b.mp4":"720/720","vn-led-diary-hook3.mp4":"720/720","vn-led-diary-hook5.mp4":"720/720","vn-led-math-hook1.mp4":"720/720","vn-led-math-hook2.mp4":"720/720","vn-led-math-hook3.mp4":"720/720","vn-led-ugc-montage.mp4":"720/720","ws-blush-shades.mp4":"720/1280","ws-foundation-mashup-v1.mp4":"720/1280","ws-foundation-mashup-v2.mp4":"720/1280"};
+const fitVids=()=>document.querySelectorAll('video').forEach(v=>{const n=(v.getAttribute('src')||'').split('/').pop();if(VDIM[n])v.style.aspectRatio=VDIM[n]});
+new MutationObserver(fitVids).observe(document.body,{childList:true,subtree:true});fitVids();
 </script>
 </body>
 </html>
