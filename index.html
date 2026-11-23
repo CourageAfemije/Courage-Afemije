@@ -1,33 +1,489 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Courage Afemije, performance marketing strategist and creative producer. Paid media, UGC &amp; AI ad creative for DTC, beauty, food and fintech brands."
-    />
-    <meta name="theme-color" content="#171717" />
-    <title>Courage Afemije | Performance Marketing &amp; Ad Creative</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
-      rel="stylesheet"
-    />
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Courage Afemije | Paid Media & Creative Strategist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: calm, senior, agency-grade: the work speaks, the type stays quiet.
+   IDEA: a creative studio's showreel: deep forest bands for statements, paper bands for the work.
+   PICTURE: an edge-to-edge reel of real ads under the hero; large creative tiles on every case page.
+   COLOUR and TYPE: forest #0f2420, paper #f4f5ef, mint text #d4f2df, lime accent #e3ff8f; Inter Tight 400 with Instrument Serif italic accents.
+   LAYOUT: generous editorial spacing, two-column work grid, case studies as their own pages. */
+:root{--forest:#0f2420;--forest2:#163029;--paper:#f4f5ef;--ink:#0f2420;--mint:#d4f2df;--lime:#e3ff8f;--soft:#5d6b66;--softd:#9fb5ab;--line:#d9ddd3;--lined:#2a4139;color-scheme:light}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:80px}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+a{color:inherit}
+h1,h2,h3{font-family:"Inter Tight",Inter,sans-serif;font-weight:400;line-height:1.04;letter-spacing:-.025em;text-wrap:balance;margin:0}
+h1{font-size:clamp(46px,7.4vw,104px)}
+h2{font-size:clamp(36px,5vw,68px)}
+h3{font-size:24px;font-weight:500;letter-spacing:-.015em}
+em{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.01em}
+p{margin:0}
+.dark{background:var(--forest);color:var(--mint)}
+.band{padding:clamp(64px,9vw,136px) max(5vw,18px)}
+.wrap{max-width:1240px;margin:0 auto}
+.label{display:block;font-size:14px;font-weight:500;padding-bottom:14px;margin-bottom:34px;border-bottom:1px solid var(--line);color:var(--soft)}
+.dark .label{border-color:var(--lined);color:var(--softd)}
+.lede{font-size:19px;color:var(--soft);max-width:58ch;margin-top:24px}
+.dark .lede{color:var(--softd)}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:50px;padding:0 24px;border-radius:999px;text-decoration:none;border:1px solid currentColor;background:none;color:inherit;font:500 16px Inter,sans-serif;cursor:pointer}
+.btn.lime{background:var(--lime);border-color:var(--lime);color:var(--forest)}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+nav{position:sticky;top:0;z-index:20;background:var(--forest);color:#fff}
+nav .wrap{display:flex;align-items:center;gap:28px;padding:14px max(5vw,18px);max-width:none}
+.logo{font:600 19px "Inter Tight",sans-serif;text-decoration:none;margin-right:auto;letter-spacing:-.01em}
+.logo em{color:var(--lime);font-size:22px}
+nav .links{display:flex;gap:26px}
+nav .links a{text-decoration:none;font-size:15px;opacity:.85}
+nav .links a:hover{opacity:1}
+nav .btn{min-height:42px;padding:0 20px;font-size:15px}
+/* hero */
+.hero{padding-bottom:clamp(40px,5vw,64px)}
+.hero h1{max-width:13ch}
+.hero h1 em{color:var(--lime)}
+.hrow{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap;margin-top:34px}
+.hrow .lede{margin:0;font-size:20px;color:var(--mint);opacity:.85}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.hgrid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:center}.hgrid h1{max-width:12ch}.hvids{display:grid;grid-template-columns:1fr 1fr;gap:14px}.hvids figure{margin:0}.hvids video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:16px;display:block;background:var(--forest2)}.hvids figcaption{font-size:13px;color:var(--softd);margin-top:8px}.hvids figure:nth-child(2){margin-top:48px}@media(max-width:820px){.hgrid{grid-template-columns:minmax(0,1fr)}.hvids figure:nth-child(2){margin-top:0}}
+.reel{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:0 max(5vw,18px) clamp(64px,8vw,110px)}
+.reel video,.reel img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;display:block;background:var(--forest2)}
+/* numbers */
+.nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
+.num{padding:0 28px 0 0}
+.num+.num{border-left:1px solid var(--line);padding-left:28px}
+.num b{display:block;font:400 clamp(44px,5.4vw,76px)/1 "Inter Tight",sans-serif;letter-spacing:-.04em}
+.num span{display:block;margin-top:14px;color:var(--soft);font-size:15px}
+.platforms{display:flex;flex-wrap:wrap;gap:12px 36px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line);font:500 clamp(20px,2.2vw,28px) "Inter Tight",sans-serif;color:var(--soft);letter-spacing:-.01em}
+.platforms span:first-child{color:var(--ink)}
+/* work grid */
+.whead{display:flex;justify-content:space-between;align-items:end;gap:28px;flex-wrap:wrap}
+.work{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px 28px;margin-top:56px}
+.card{text-decoration:none;display:block}
+.card.wide{grid-column:1/-1}
+.thumb{border-radius:16px;overflow:hidden;aspect-ratio:4/3;position:relative;background:var(--forest)}
+.card.wide .thumb{aspect-ratio:auto}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.card:hover .thumb img,.card:hover .tile{transform:scale(1.03)}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.thumb.trio{display:grid;grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:6px;background:transparent;aspect-ratio:auto}.thumb.trio img,.card:not(.wide) .trio img{height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:10px}
+.tile{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(22px,3vw,36px);transition:transform .5s}
+.tile .big{font:400 clamp(64px,9vw,128px)/.9 "Instrument Serif",serif;font-style:italic;letter-spacing:-.02em}
+.tile .cap{font-size:15px;opacity:.85;max-width:26ch}
+.tile .tg{font-size:14px;opacity:.7}
+.c2{background:var(--forest);color:var(--lime)}.c3{background:var(--lime);color:var(--forest)}.c4{background:#d4f2df;color:var(--forest)}.c5{background:#1d3a33;color:var(--mint)}
+.cmeta{margin-top:18px}
+.cmeta h3{font-size:26px}
+.cmeta .lab{color:var(--soft);font-size:15px;margin-top:4px}
+.cmeta .m{display:flex;gap:22px;flex-wrap:wrap;color:var(--soft);font-size:14px;margin-top:10px}
+.cmeta .m b{color:var(--ink);font:500 20px "Inter Tight",sans-serif;margin-right:4px}
+/* process */
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));margin-top:64px;border-top:1px solid var(--lined)}
+.step{padding:28px 22px 0 0}
+.step+.step{border-left:1px solid var(--lined);padding-left:22px}
+.step h3{color:#fff;margin-bottom:12px}
+.step p{color:var(--softd);font-size:15px}
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(32px,6vw,96px)}
+.tl>div{display:grid;grid-template-columns:130px minmax(0,1fr);gap:18px;padding:20px 0;border-bottom:1px solid var(--line)}
+.tl>div:first-child{border-top:1px solid var(--line)}
+.tl span{color:var(--soft);font-size:14px}
+.tl b{font-weight:600}
+.tl p{color:var(--soft);font-size:15px}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.tools span{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:14px}
+/* contact */
+.contact h2{font-size:clamp(48px,8vw,120px);max-width:12ch}
+.contact h2 em{color:var(--lime)}
+.contact .row{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap;margin-top:40px}
+.mail{color:var(--softd);font-size:15px;margin-top:16px}
+footer{background:var(--forest);color:var(--softd);padding:24px max(5vw,18px);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:14px;border-top:1px solid var(--lined)}
+/* case page */
+.chero{padding-bottom:clamp(48px,6vw,80px)}
+.back{display:inline-block;margin-bottom:40px;text-decoration:none;color:var(--softd);font-size:15px}
+.back:hover{color:#fff}
+.chero .kick{color:var(--lime);font-size:15px;margin-bottom:18px}
+.chero h1{font-size:clamp(44px,6.6vw,92px);color:#fff;max-width:16ch}
+.chero .lede{color:var(--mint);opacity:.85}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.tags span{border:1px solid var(--lined);border-radius:999px;padding:5px 14px;font-size:14px;color:var(--mint)}
+.cnums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:56px;border-top:1px solid var(--lined)}
+.cnums div{padding:24px 20px 0 0}
+.cnums div+div{border-left:1px solid var(--lined);padding-left:20px}
+.cnums b{display:block;font:400 clamp(36px,4.4vw,60px)/1 "Inter Tight",sans-serif;color:var(--lime);letter-spacing:-.03em}
+.cnums span{display:block;margin-top:10px;font-size:14px;color:var(--softd)}
+.sec{display:grid;grid-template-columns:240px minmax(0,1fr);gap:clamp(20px,5vw,72px);padding:52px 0;border-top:1px solid var(--line)}
+.sec:first-child{border-top:0;padding-top:0}
+.sec h3{font-size:22px}
+.sec p{color:var(--soft);font-size:18px;max-width:64ch;margin-bottom:14px}
+.sec p strong{color:var(--ink);font-weight:600}
+.sec ul{margin:0;padding:0;list-style:none;max-width:68ch}
+.sec li{padding:14px 0;border-top:1px solid var(--line);color:var(--soft);font-size:17px}
+.sec li:first-child{border-top:0;padding-top:0}
+.sec li strong{color:var(--ink);font-weight:600}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.cgrid div{background:#fff;border-radius:14px;padding:20px}
+.cgrid h4{margin:0 0 6px;font:500 18px "Inter Tight",sans-serif}
+.cgrid p{font-size:15px;margin:0}
+.shot{margin:0 0 24px;border-radius:14px;overflow:hidden;background:#fff;border:1px solid var(--line)}
+.shot img{display:block;width:100%;height:auto}
+.shot figcaption{padding:14px 18px;font-size:14px;color:var(--soft)}
+.winner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:center;margin:0 0 56px;background:#fff;border-radius:18px;padding:clamp(16px,2.5vw,28px)}.winner .hm img,.winner .hm video{width:100%;display:block;border-radius:12px;aspect-ratio:4/5;object-fit:cover;background:var(--forest)}.winner h4{font:500 clamp(24px,2.6vw,34px)/1.1 'Inter Tight',sans-serif;letter-spacing:-.02em;margin:14px 0 10px}.winner p{color:var(--soft);font-size:17px;max-width:44ch}.badge2{display:inline-block;background:var(--lime);color:var(--forest);font-size:13px;font-weight:600;padding:5px 12px;border-radius:999px}@media(max-width:700px){.winner{grid-template-columns:minmax(0,1fr)}}
+.gsub{font:500 20px "Inter Tight",sans-serif;margin:0 0 18px}
+.gsub:not(:first-child){margin-top:48px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;align-items:start}
+.gal figure{margin:0}.gal img{aspect-ratio:4/5;object-fit:cover}.sec.full{grid-template-columns:minmax(0,1fr)}.sec.full h3{margin-bottom:8px}
+.gal img,.gal video{width:100%;display:block;border-radius:12px;background:var(--forest)}
+.gal video{aspect-ratio:1;object-fit:cover}
+.gal video.v{aspect-ratio:9/13}.gal video.w{aspect-ratio:16/9}
+.gal figcaption{padding:10px 2px 0;font-size:14px;color:var(--soft)}
+.gal figcaption b{display:block;color:var(--ink);font-weight:600}
+.gal figcaption q{display:block}
+.ph{border:1px dashed #b9c0b2;border-radius:16px;padding:40px 28px;text-align:center;color:var(--soft)}
+.ph b{display:block;color:var(--ink);font:500 20px "Inter Tight",sans-serif;margin-bottom:6px}
+.learn{border-radius:18px;padding:clamp(28px,4vw,52px);margin-top:20px}
+.learn span{font-size:14px;color:var(--softd)}
+.learn p{font:400 clamp(26px,3vw,40px)/1.15 "Inter Tight",sans-serif;letter-spacing:-.02em;color:#fff;max-width:30ch;margin-top:10px}
+.learn p em{color:var(--lime)}
+.next{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.next a{text-decoration:none;font:500 22px "Inter Tight",sans-serif}.next a span{display:block;font:400 14px Inter,sans-serif;color:var(--soft);margin-bottom:4px}
+.stages{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:48px}
+.stage{background:#fff;border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.stage img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+.stage .sb{padding:16px 16px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.stage .sn{font-size:13px;color:var(--soft)}
+.stage h3{font-size:20px}
+.stage q{font-family:"Instrument Serif",serif;font-style:italic;font-size:19px;line-height:1.2;color:var(--ink)}
+.stage p{font-size:14px;color:var(--soft)}
+.stage .kpi{margin-top:auto;padding-top:10px;border-top:1px solid var(--line);font-size:13px;color:var(--soft)}
+.stage .kpi b{color:var(--ink);font-weight:600}
+.flow{display:flex;justify-content:space-between;margin-top:14px;font-size:13px;color:var(--soft)}
+.flow span:nth-child(2){flex:1;margin:0 14px;border-top:1px solid var(--line);align-self:center}
+.andro{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,80px);margin-top:96px;padding-top:56px;border-top:1px solid var(--line)}
+.dims{width:100%;border-collapse:collapse;font-size:15px}
+.dims th,.dims td{text-align:left;padding:14px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.dims th{font-weight:500;color:var(--soft);font-size:13px}
+.dims td:first-child{font-weight:600;white-space:nowrap}
+.dims td:last-child{color:var(--soft)}
+.vs{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;margin-top:28px}
+.vs div{background:#fff;border-radius:14px;padding:18px}
+.vs h4{margin:0 0 6px;font:500 18px "Inter Tight",sans-serif}
+.vs p{font-size:14px;color:var(--soft)}
+.rules2{margin:28px 0 0;padding:0;list-style:none}
+.rules2 li{padding:14px 0;border-top:1px solid var(--line);font-size:15px;color:var(--soft)}
+.rules2 li b{color:var(--ink);font-weight:600}
+.srcs{margin-top:22px;font-size:13px;color:var(--soft)}
+@media(max-width:1000px){.stages{grid-template-columns:repeat(2,minmax(0,1fr))}.andro{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){.stages{grid-template-columns:minmax(0,1fr)}.vs{grid-template-columns:minmax(0,1fr)}.dims td:first-child{white-space:normal}.flow{display:none}}
+@media(max-width:1000px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.step+.step{border-left:0;padding-left:0}.step{padding-right:20px}.nums,.cnums{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:36px}.num:nth-child(3),.cnums div:nth-child(3){border-left:0;padding-left:0}}
+@media(max-width:820px){.about,.work{grid-template-columns:minmax(0,1fr)}.sec{grid-template-columns:minmax(0,1fr);gap:16px}.reel{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){nav .links{display:none}.steps{grid-template-columns:minmax(0,1fr)}.tl>div{grid-template-columns:minmax(0,1fr);gap:4px}.trio{grid-template-columns:repeat(2,1fr)}.trio img:nth-child(3){display:none}}
+@media (prefers-reduced-motion:reduce){.thumb img,.tile{transition:none}}
+</style>
+</head>
+<body>
 
-    <script>
-      (function () {
-        try {
-          var saved = localStorage.getItem('theme');
-          // Dark is the default skin now — only an explicit 'light' choice flips it.
-          if (saved === 'light') document.documentElement.classList.add('light');
-        } catch (e) {}
-      })();
-    </script>
-  </head>
-  <body class="font-sans antialiased">
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<nav><div class="wrap">
+ <a class="logo" href="#top">Courage <em>Afemije</em></a>
+ <div class="links"><a href="#work">Work</a><a href="#process">Process</a><a href="#strategy">Strategy</a><a href="#about">About</a></div>
+ <a class="btn lime" href="#contact">Work with me</a>
+</div></nav>
+
+<main id="home">
+<header class="dark" id="top">
+ <div class="band hero"><div class="wrap hgrid">
+  <div>
+   <h1>Ads that <em>earn</em> their spend.</h1>
+   <p class="lede">Paid media and creative strategy for DTC and e-commerce brands. I plan the media, build the creative that feeds it, and test until the numbers prove what works.</p>
+   <div class="cta" style="margin-top:32px"><a class="btn lime" href="#work">See the work</a><a class="btn" href="#contact">Get in touch</a></div>
+  </div>
+  <div class="hvids" aria-label="Ads I worked on">
+   <figure><video src="media/fbl-ugc-belts.mp4" poster="media/fbl-ugc-belts.jpg" autoplay muted loop playsinline></video><figcaption>UGC-style ad · premium accessories</figcaption></figure>
+   <figure><video src="media/ws-blush-shades.mp4" poster="media/ws-blush-shades.jpg" autoplay muted loop playsinline></video><figcaption>Creator edit · Wonderskin trial</figcaption></figure>
+  </div>
+ </div></div>
+</header>
+
+<section class="band"><div class="wrap">
+ <span class="label">Results in numbers</span>
+ <div class="nums">
+  <div class="num"><b>$120K+</b><span>monthly ad spend I manage</span></div>
+  <div class="num"><b>$1M+</b><span>monthly revenue across my accounts</span></div>
+  <div class="num"><b>3x–9x</b><span>ROAS across the brands I run</span></div>
+  <div class="num"><b>6+ yrs</b><span>owning paid acquisition, including two YC W22 startups</span></div>
+ </div>
+ <div class="platforms"><span>Where I work</span><span>Meta</span><span>Google</span><span>TikTok</span><span>Amazon</span></div>
+</div></section>
+
+<section class="band" id="work" style="padding-top:0"><div class="wrap">
+ <span class="label">Selected work</span>
+ <div class="whead"><h2>The ads, the numbers, <em>the thinking.</em></h2>
+  <p class="lede" style="margin:0;max-width:40ch">A named beauty case study, agency accounts shown anonymously under NDA, and a beauty editing trial.</p></div>
+ <div class="work" id="cards"></div>
+</div></section>
+
+<section class="band dark" id="process"><div class="wrap">
+ <span class="label">How I work</span>
+ <h2 style="color:#fff">The creative <em style="color:var(--lime)">is</em> the targeting.</h2>
+ <p class="lede">Meta and TikTok read what an ad shows and says to decide who sees it. So I run media buying and creative as one system, and every result feeds the next round.</p>
+ <div class="steps" id="steps"></div>
+</div></section>
+
+
+<section class="band" id="strategy"><div class="wrap">
+ <span class="label">Strategy</span>
+ <h2>One audience, five <em>states of mind.</em></h2>
+ <p class="lede">People don't buy the first time they see an ad. They move from not knowing they have a problem to choosing a brand. I brief creative for each stage of awareness, so every ad has one job, and I match each stage to where it runs and how it's judged.</p>
+ <div class="stages" id="stages"></div>
+ <div class="flow"><span>Cold: broad prospecting</span><span></span><span>Warm: retargeting and past buyers</span></div>
+
+ <div class="andro">
+  <div>
+   <h2 style="font-size:clamp(32px,4vw,52px)">Creative diversity in the <em>Andromeda</em> era.</h2>
+   <p class="lede">Meta's Andromeda system decides who sees an ad largely from the ad itself, so the creative now does the targeting. It also groups ads it sees as alike: the industry calls this an Entity ID, though it isn't an official Meta term. Ten near-identical versions of one ad compete for the same slot instead of reaching ten different groups of people.</p>
+   <p class="lede">So I don't scale by making more variations. I scale by making ads that are genuinely different, so each one finds its own buyers, then I iterate on the winners.</p>
+   <ul class="rules2">
+    <li><b>Broad, consolidated campaigns.</b> Few campaigns and broad targeting give the system room to match each concept to its buyer. On one premium accessories account, broad beat luxury-brand interests: 9.25x ROAS.</li>
+    <li><b>Fatigue and similarity are different problems.</b> Fatigue (rising frequency and CPA on a winner) is fixed by rotating in fresh executions. Similarity (new ads that never get delivery) is fixed by a new concept, not a new headline.</li>
+    <li><b>Read the diversity signal.</b> I check Meta's creative diversity rating in Ads Manager alongside hook rate and CPA, and brief the next batch to fill the gaps.</li>
+   </ul>
+  </div>
+  <div>
+   <table class="dims">
+    <thead><tr><th>Dimension I vary</th><th>What changes</th><th>From my work</th></tr></thead>
+    <tbody>
+     <tr><td>Persona</td><td>Who the ad is for</td><td>Car Builder, Rider and Streetwear Buyer for one car-culture brand</td></tr>
+     <tr><td>Angle</td><td>The reason to buy</td><td>Guarantee, value maths, proof and gifting for one LED mask</td></tr>
+     <tr><td>Format</td><td>How it's built</td><td>Static, UGC video, iMessage and comment-wall natives, carousel</td></tr>
+     <tr><td>Visual world</td><td>Setting, light, people</td><td>Night rides, studio still life, barrio clotheslines, stadiums</td></tr>
+     <tr><td>Messenger</td><td>Who's speaking</td><td>Brand, customer review, creator, founder</td></tr>
+     <tr><td>Awareness stage</td><td>What the buyer already knows</td><td>The five stages above</td></tr>
+    </tbody>
+   </table>
+   <div class="vs">
+    <div><h4>Diversity</h4><p>New concepts that open new territory: a different persona, angle or visual world. This is what earns new reach.</p></div>
+    <div><h4>Iteration</h4><p>New hooks, creators, cuts and copy on a proven concept. For one beauty brand, 2 concepts became 8 hook tests on the same body.</p></div>
+   </div>
+   <p class="srcs">Industry analysis of Andromeda: <a href="https://www.tryatria.com/blog/andromeda-meta-ads">Atria</a>, <a href="https://admakeai.com/blog/meta-andromeda">AdMake</a>, <a href="https://motionapp.com/library/talk/andromeda-2-0-explained-how-meta-s-algorithm-actually-picks-your-winning-ads/">Motion</a>.</p>
+  </div>
+ </div>
+</div></section>
+
+<section class="band" id="about"><div class="wrap about">
+ <div>
+  <span class="label">About</span>
+  <h2>From first hire to <em>ten brands.</em></h2>
+  <p class="lede">I started as a designer and video editor, then spent six years owning paid acquisition at fast-growing startups, often as the first or most senior marketer. Today I lead paid media and creative strategy for DTC brands and manage the designer and video editor who bring my briefs to life.</p>
+  <div class="tools" id="tools"></div>
+ </div>
+ <div class="tl" id="tl"></div>
+</div></section>
+
+<section class="band dark contact" id="contact"><div class="wrap">
+ <h2 style="color:#fff">Let's make your ads <em>pay.</em></h2>
+ <div class="row">
+  <div><p class="lede" style="margin:0">Hiring for paid media or creative strategy, or need a consultant for a DTC brand?</p>
+   <p class="mail">afemijecourage@gmail.com · +234 813 998 1589 · Lagos, open to remote and relocation</p></div>
+  <div class="cta"><a class="btn lime" href="mailto:afemijecourage@gmail.com">Email me</a><button class="btn" id="copy" type="button">Copy email</button><a class="btn" href="https://www.linkedin.com/in/courageafemije">LinkedIn</a></div>
+ </div>
+</div></section>
+</main>
+
+<main id="case" hidden>
+ <div class="dark"><div class="band chero"><div class="wrap" id="caseHead"></div></div></div>
+ <div class="band"><div class="wrap" id="caseBody"></div></div>
+</main>
+
+<footer><span>© 2026 Courage Afemije</span><span>Agency brands shown anonymously under NDA. Names in screenshots are blurred.</span></footer>
+
+<script>
+{
+const $=id=>document.getElementById(id);
+const vid=(f,cap,line,cls)=>`<figure><video class="${cls||''}" src="media/${f}.mp4" poster="media/${f}.jpg" preload="none" controls playsinline></video><figcaption><b>${cap}</b>${line?`<q>${line}</q>`:''}</figcaption></figure>`;
+const img=(f,cap,line)=>`<figure><img src="media/${f}.jpg" alt="${line||cap}" loading="lazy"><figcaption><b>${cap}</b>${line?`<q>${line}</q>`:''}</figcaption></figure>`;
+const shot=(f,cap)=>`<figure class="shot"><img src="media/${f}.jpg" alt="${cap}" loading="lazy"><figcaption>${cap}</figcaption></figure>`;
+const HERO=h=>h?`<figure class="winner"><div class="hm">${h[0].endsWith('.mp4')?`<video src="media/${h[0]}" poster="media/${h[0].slice(0,-4)}.jpg" controls playsinline preload="none"></video>`:`<img src="media/${h[0]}.jpg" alt="${h[2]}">`}</div><figcaption><span class="badge2">${h[3]}</span><h4>${h[1]}</h4><p>${h[2]}</p></figcaption></figure>`:'';
+const G=(t,arr)=>`<div class="gsub">${t}</div><div class="gal">${arr.map(h=>h[0].endsWith('.mp4')?vid(h[0].slice(0,-4),h[1],h[2],'v'):img(...h)).join('')}</div>`;
+const ph=`<div class="ph"><b>Creatives coming soon</b>Anonymised ads for this brand will be added here. Full examples available on request.</div>`;
+const C=[
+{id:'voguenow',hero:['vn-static-week4','You\'d be at Week 4 by now.','The 100-day guarantee turned into a reason to start today. It answers the category\'s biggest objection (will it work for me?) without a single result claim.','Featured pick'],cardLab:'Luxury beauty DTC · Contract',thumbs:['vn-static-week4','vn-static-risk-nothing','vn-static-fda','vn-static-session3'],label:'Luxury beauty DTC · Contract, Jun–Aug 2026',title:'VogueNow Skin',
+ sub:'At-home beauty tech led by a $399 LED light therapy mask. I built the creative strategy and produced the ads, working alongside the brand\'s media buyer.',
+ tags:['Meta','TikTok','Amazon','Hook testing','AI production','Landing pages'],
+ m:[['3x','ROAS'],['3%','click-through rate'],['$35','cost per purchase'],['22','ads shown below']],
+ card:{m:[['3x','ROAS'],['3%','CTR'],['$35','CPA']]},
+ challenge:['Shoppers don\'t believe beauty ads, and LED masks are a crowded, sceptical category at a high price point.'],
+ insight:['The objection is the angle. Instead of promising results, every ad hands the shopper proof they can check: 280 LEDs, FDA-cleared, a 100-day guarantee, and a risk-free call to action.'],
+ did:['Built a full creative system: statics around guarantee, proof, comparison and value angles, plus five video concepts: an 8-week diary, a value comparison against facialist visits, a sceptic montage, a gift reveal and an unboxing',
+  'Cut the two main concepts into <strong>eight opening hooks</strong> over the same body, so tests isolate the first three seconds',
+  'Produced statics and videos with Claude, ChatGPT and Higgsfield, including AI-made films for the gifting season',
+  'Ran structured creative tests with the media buyer and tightened landing pages with AI-assisted copy and layout changes'],
+ concepts:[['Guarantee statics','The 100-day refund as the headline: "You\'d be at Week 4 by now."'],['Proof and comparison','Specs, clinical data and a side-by-side against "most LED masks".'],['8-week diary','Results over time, told week by week. 5 hooks.'],['Do the math','$200 per facialist visit vs $399 once. 3 hooks.'],['Sceptic montage','"Not another skincare scam": users tracking results.'],['Gift reveal','AI-produced films for holiday gifting.'],['Unboxing','AI-produced sensory demo of first use.']],
+ shots:[],
+ creative:()=>`<div class="gsub">Statics: one objection, many angles</div><div class="gal">${[
+  ['vn-static-week4','Guarantee','You\'d be at Week 4 by now.'],
+  ['vn-static-100days','Guarantee','100 days. Your skin, or your money back.'],
+  ['vn-static-change-mind','Guarantee','100 days to change your mind.'],
+  ['vn-static-risk-nothing','Risk reversal','You risk nothing. We risk everything.'],
+  ['vn-static-fda','Proof','FDA-cleared. 280 medical-grade LEDs. Actually works.'],
+  ['vn-static-clinical','Clinical proof','Clinic results. Couch routine.'],
+  ['vn-static-wavelengths','Education','Four wavelengths. Four modes. One mask.'],
+  ['vn-static-not-equal','Comparison','Not all LED masks are equal.'],
+  ['vn-static-session3','Value','Paid for itself by session 3.']].map(h=>img(...h)).join('')}</div>
+  <div class="gsub">Video hook tests: same body, different first three seconds</div><div class="gal">${[
+  ['vn-led-diary-hook1','8-week diary · documentary','I tested LuminX Pro for 8 weeks and filmed it'],
+  ['vn-led-diary-hook2b','8-week diary · proof first','Week 0 → week 8. No filters. Photos don\'t lie.'],
+  ['vn-led-diary-hook3','8-week diary · objection flip','It\'s probably just another LED mask. That\'s what they say before week 4.'],
+  ['vn-led-diary-hook5','8-week diary · anti-ad','I don\'t believe beauty ads, so here\'s my unedited camera roll instead.'],
+  ['vn-led-diary-hook2','8-week diary · delayed reveal','…and filmed everything'],
+  ['vn-led-math-hook1','Do the math · price shock','My facialist had a 6-week waitlist and wanted $200 a session'],
+  ['vn-led-math-hook2','Do the math · numbers first','$200 × every visit. $399 × once.'],
+  ['vn-led-math-hook3','Do the math · reframe','It was never the clinic. It was the dose.']].map(h=>vid(...h)).join('')}</div>
+  <div class="gsub">More concepts</div><div class="gal">${[
+  ['vn-led-ugc-montage','Sceptic montage','Not another skincare scam',''],
+  ['vn-ai-gift-vertical','Gift reveal · 9:16 · AI-produced','','v'],
+  ['vn-ai-gift-surprise','Gift reveal · 16:9 · AI-produced','','w'],
+  ['vn-ai-gift-couple','Gift reveal · 16:9 · AI-produced','','w'],
+  ['vn-ai-unboxing','Unboxing · AI-produced','','']].map(h=>vid(...h)).join('')}</div>`,
+ learn:'In a sceptical category, <em>proof beats promise.</em> Testing hooks in isolation showed which way of handling doubt stopped the scroll.'},
+{id:'faith-accessories',hero:['fbl-text','Review-led statics won.','Real customer words did the selling: iMessage reviews, comment walls and "his words, not ours" outperformed brand-voice ads. UGC-style video and catalog-led product creatives were the other top performers.','Top performer'],cardLab:'Agency client · Premium accessories',thumbs:['fbl-text','fbl-ugc-belts'],label:'Agency client · US · Meta',title:'Faith-inspired premium accessories',
+ sub:'Belts, watches and denim at $65–$120, led by an $85 signature belt.',tags:['Meta','Creative strategy','Review-led ads','CRO','Holiday offer'],
+ m:[['3.98x','ROAS'],['580','purchases'],['$17.70','cost per purchase'],['9.25x','ROAS on scaled broad']],
+ card:{num:'9.25x',small:'ROAS on the scaled broad ad set',cls:'t2',m:[['3.98x','ROAS'],['580','purchases']]},
+ challenge:['A premium brand that cold audiences didn\'t know, on a store that was losing buyers it had already paid to reach: broken menu links, $0 prices showing, sold-out items in the grid and an "all sales final" policy.'],
+ insight:['The buyer dresses streetwear-meets-premium but wants what they wear to mean something. Younger buyers loved swapping gold and chrome buckles on one strap; older buyers responded to craft and meaning. The signature belt was the #1 seller by a wide margin, so it led every round.'],
+ did:['Wrote four creative rounds, <strong>65+ static concepts</strong>: a relaunch, competitor-format remakes, review-led ads and a holiday Mystery Box offer',
+  'Tested broad targeting against luxury-brand interest audiences; broad won and was scaled',
+  'Wrote a two-phase CRO roadmap: fixes, quick add-to-cart, a cart drawer with upsells, an exchange policy and landing collections for Meta traffic'],
+ concepts:[['"If this is your vibe…"','Outfit on the left, the belt on the right: "…then you should buy this."'],['Swap the buckle','"One strap, one buckle, one look," struck through. Built for younger buyers.'],['Don\'t trust us','"Trust the people who already wear it": a wall of real reviews.'],['Mystery Box','3 for $100, up to 5 pieces plus a free gift, with real bestsellers in the box.']],
+ shots:[['meta-fbl-adsets','Testing campaign by ad set: 580 purchases at $17.70 and 3.98x ROAS. Product and broad ad sets beat interest audiences.'],['meta-fbl-scaled','A later period: the scaled broad ad set returned 9.25x ROAS on $3,894.'],['meta-fbl-funnel','Campaign view of the same period: testing at 6.73x alongside retargeting and prospecting.']],
+ creative:()=>G('Top performers: review and testimonial statics',[['fbl-comments','Proof · comment wall','Real comments, usernames hidden.'],['fbl-review','Proof · review','His words. Not ours.'],['fbl-chat','Proof · chat','Wait, that buckle says FAITH??']])+G('Top performers: UGC-style video',[['fbl-ugc-belts.mp4','UGC · belts in the wild','Real fits, real streets, one buckle.'],['fbl-ugc-fits.mp4','UGC · belt fits','Four fits in five seconds.'],['fbl-ugc-city.mp4','UGC · city fit','Skyline street-style.'],['fbl-ugc-bridge.mp4','UGC · bridge fit','Under the bridge, belt forward.'],['fbl-ugc-collection.mp4','Lookbook · collection','Collection 001, street-cast.'],['fbl-ugc-cast.mp4','Lookbook · cast','A different face every frame.'],['fbl-buckle-swap.mp4','Video · buckle swap','One buckle, every strap.']])+G('Top performers: catalog-led statics',[['fbl-fits','Catalog · denim range','Your fits, one faith.'],['fbl-nevada','Catalog · launch','Nevada denim, out now.'],['fbl-belt-means','Catalog · product callouts','The belt that means something.']])+G('Black Friday offer',[['fbl-roulette','Offer · roulette','Spin for up to 55% off. One day only.'],['fbl-curtain','Offer · reveal','The hero belt, revealed.'],['fbl-comes-early','Offer · early access','Faith comes early this year.'],['fbl-belt-means','Offer · product','The belt that means something.'],['fbl-onyx','Offer · spotlight','The denim that keeps showing up.']])+G('Brand and meaning',[['fbl-moments','Meaning · watch','For moments you can\'t rush.'],['fbl-hands','Meaning · watch','For moments you can\'t rush.'],['fbl-plans-end','Meaning · watch','When your plans end, God\'s time begins.'],['fbl-sky','Meaning · belt','The belt that holds your faith.']])+G('Lifestyle',[['fbl-zipup','Product · lifestyle','The kind of zip-up you keep forever.']]),
+ learn:'Let customers do the talking. <em>Review-led statics</em> and UGC-style video beat brand-voice ads, and strong creative on broad targeting outsold luxury-brand interest audiences.'},
+{id:'heritage-streetwear',hero:['tribal-original','Chicano models and carousels won.','Creatives showing Chicano models from the community, plus carousel formats, were the top performers. Representation did more than any product shot.','Top performer'],cardLab:'Agency client · Streetwear',thumbs:['tribal-original','tribal-worldwide'],label:'Agency client · San Diego · Meta',title:'Heritage streetwear, est. 1989',
+ sub:'A 35-year-old streetwear label selling hoodie drops to a loyal OG base and a new generation.',tags:['Meta','Drop strategy','Audience segments','Review-led ads'],
+ m:[['9.05x','ROAS'],['398','purchases'],['$7.76','cost per purchase'],['2.81%','click-through rate']],
+ card:{num:'9.05x',small:'ROAS at a $7.76 cost per purchase',cls:'t3',m:[['398','purchases'],['2.81%','CTR']]},
+ challenge:['Sell new drops to a loyal older base and reach younger buyers in Chicano, lowrider and graffiti culture, on a small budget, with hoodies at $58–$80.'],
+ insight:['The brand\'s age is its edge: new labels have to manufacture credibility, this one has decades of real customers. Buyers split into OGs (heritage), Culture (pride) and Graff Heads (art and loud sleeves), each with its own hook.'],
+ did:['Mapped every hoodie in the drop to a segment and an angle, such as "Low and slow since \'89" and "Both sleeves. No apologies."',
+  'Wrote about 25 concepts across competitor-format remakes and a fall hoodie drop',
+  'Used real customer words only, quoted verbatim, with older reviews framed as proof of brand quality'],
+ concepts:[['Regret review','A tongue-in-cheek one-star review: "Now I need the whole drop."'],['Pick your script','Three graffiti-style hoodies fanned out: "3 hand-styles. 1 Clique."'],['Trust the OGs','"Don\'t trust us when we say the best hoodie. Trust the OGs."'],['Lookbook grid','Nine frames of one hoodie: back, front, details, crew, mural.']],
+ shots:[['meta-tribal','398 purchases at a $7.76 CPA and 9.05x ROAS. Prospecting alone hit 9.54x at a 3.05% CTR.']],
+ creative:()=>G('Statics',[['tribal-built-heavy','Product · quality','Built heavy. Built to last.'],['tribal-fresh-block','Drop','Fresh off the block.'],['tribal-worldwide','Community','Worldwide clique, with bestsellers.'],['tribal-taking-heads','Graff Head · poster','Taking Heads jumbo print hoodie.'],['tribal-longsleeves','Collection grid','Nine longsleeves in one frame.'],['tribal-script-snapback','Restock','Script brown snapback, now in stock.'],['tribal-aqua-snapback','Restock','Aqua deconstructed snapback.']]),
+ learn:'Show the community, not just the product. <em>Chicano models</em> and carousels outperformed, and a brand\'s history is a creative asset. Ads built on real loyalty and cultural identity returned more than $9 for every $1.'},
+{id:'mexican-streetwear',thumbs:['mtf-brown-clothesline','mtf-green-home'],hero:['mtf-brown-clothesline','Brown Pride, on the line.','The jersey hung on a clothesline between adobe walls at golden hour: a scene the buyer recognises from home, with the offer kept to one line.','Featured pick'],creative:()=>G('Jersey drops',[['mtf-brown-float','Colourway · Brown Pride','Front and back, one offer.'],['mtf-green-home','Colourway · Green Home','Stadium setting for match season.'],['mtf-red-away','Colourway · Red Away','Same system, new colourway.'],['mtf-blackout','Colourway · Blackout','Aztec temple backdrop.'],['mtf-virgencita','Faith · football jersey','Mi Virgencita, four views.']]),cardLab:'Agency client · Streetwear',label:'Agency client · Southwest Detroit · Meta',title:'Mexican-American streetwear',
+ sub:'A Mexican-owned community brand selling jerseys, tees, hoodies and hats across the US.',tags:['Meta','Cultural creative','Spanish-first copy','AI production workflow'],
+ m:[['$51.5K','revenue'],['581','purchases'],['2.94x','ROAS'],['$30.20','cost per purchase']],
+ card:{num:'$51.5K',small:'revenue from 581 purchases',cls:'t4',m:[['2.94x','ROAS'],['$30.20','CPA']]},
+ challenge:['Scale past $17K in spend for a community brand, which meant producing far more creative than a small team could make by hand.'],
+ insight:['Customers buy to show where they\'re from, so the ads had to feel made by the community: Spanish-first copy with Spanglish where it fits, barrio-real models, and the brand\'s own lines such as "Hecho para Mexicanos".'],
+ did:['Rebuilt proven layouts from adjacent brands around the brand\'s own products',
+  'Wrote a documented Claude + Higgsfield production workflow with a QA checklist for prints, accents, logos and safe zones',
+  'Ran prospecting and retargeting side by side; retargeting returned <strong>3.39x at a $24.96 CPA</strong>'],
+ concepts:[['Price-drop complaint','A joking Instagram Story demanding a refund because the jersey went on sale: a sale turned into social proof.'],['Las 3 razones','A callout diagram selling the hat on three features.'],['Most wanted in the barrio','A hoodie flat-lay with a Spanish headline.'],['Collection grid','Ten back-print tees in one frame.']],
+ shots:[['meta-mtf','581 purchases and $51.5K revenue on $17.5K spend at 2.94x ROAS; retargeting led at 3.39x.']],
+ learn:'Cultural creative only works when the community would believe it came from them. A documented AI workflow made it possible at volume.'},
+{id:'car-culture',hero:['clutch-bf-decal','Driven by Faith, on the glass.','The decal on a real car, one offer line, nothing else. It matches the best-performing audience (automotive, 4.07x ROAS) and the insight that the build is already finished.','Featured pick'],cardLab:'Agency client · Apparel and car accessories',thumbs:['clutch-jik-moto','clutch-bf-decal'],label:'Agency client · Los Angeles · Meta',title:'Faith-driven car culture',
+ sub:'Apparel and car accessories (decals, windshield banners, plate frames) for people who put their faith on their build.',tags:['Meta','Full funnel','Audience testing','Higgsfield production'],
+ m:[['$86.1K','revenue'],['1,437','purchases'],['2.85x','ROAS'],['$20.99','cost per purchase']],
+ card:{num:'1,437',small:'purchases and $86.1K revenue',cls:'t5',m:[['2.85x','ROAS'],['$20.99','CPA']]},
+ challenge:['Scale past $30K in spend across a full funnel, from cold testing through a collection launch to retargeting, without ROAS falling as budget grew.'],
+ insight:['The build is already finished; a decal is how the buyer puts their faith on it. So the ad only has to show the product looking right on the car. Concepts were written for three buyers: Car Builder, Rider and Streetwear Buyer.'],
+ did:['Wrote 28 concepts, with faith shown visually rather than in text, such as a cross-shaped shadow falling beside the car',
+  'Tested car and motorcycle audiences against streetwear interests: <strong>automotive returned 4.07x at a $15.61 CPA</strong>',
+  'Held ROAS between 2.5x and 3.2x at every stage of the funnel; cross-selling to past buyers led at 3.16x'],
+ concepts:[['Tee on the hood','The shirt draped across a coupe in grainy film light.'],['Cross shadow','Overhead on a red roof, a cross-shaped shadow on the tarmac.'],['Faith on glass','One decal on blacked-out rear glass, one light source.'],['Black Friday','The product is the ad; one offer line, nothing else.']],
+ shots:[['meta-clutch-adsets','Full funnel by ad set: 1,055 testing purchases at 2.85x, a collection launch at 2.86x and cross-selling at 3.16x. Audience names blurred.'],['meta-clutch-funnel','Campaign view: $31.2K total spend, including a car show promotion at $0.09 per landing page view.']],
+ creative:()=>G('New drop: faith message, no promotion',[['clutch-jik-moto','Drop · hero','Jesus Is King. New drop.'],['clutch-jik-jersey','Drop · jersey','The drop\'s hero piece.'],['clutch-jik-hat','Drop · hat','Details in four frames.'],['clutch-wore-first','Faith · decal','He wore it first.'],['clutch-02','Faith · apparel','Number 02. Faith first.'],['clutch-faith-loud','Faith · apparel','Wear your faith out loud.']])+G('Black Friday: the product is the ad',[['clutch-bf-decal','Decal','Driven by Faith, on the glass.'],['clutch-bf-v2cross','Decal · sizes','Pick your size: micro, small, large.'],['clutch-bf-banner','Windshield banner','The banner, fully readable.'],['clutch-bf-triple','Apparel','Triple Cross sweatshirt, shown like a product.']]),
+ learn:'Target the identity, not the category. The car scene was a better route to buyers than streetwear audiences.'}
+,{id:'topical-wellness',hero:['qtopix-lab-report','Great on the label. Better in the lab report.','Bold type that is itself the brand promise. It ends on proof, carries no restricted claim, and works for all three personas.','Featured pick'],cardLab:'Agency client · Health and wellness',thumbs:['qtopix-lab-report','qtopix-6am'],label:'Agency client · US · Meta',title:'Lab-tested topical wellness brand',
+ sub:'Balms, roll-ons and sprays in a category Meta restricts. Creative strategy and briefing.',tags:['Meta','Restricted category','Buyer personas','Hook bank'],
+ m:[['9','concepts briefed'],['7','shown below'],['3','buyer personas'],['0','banned claims']],
+ card:{m:[['9','concepts'],['3','personas']]},
+ challenge:['Meta flags the category\'s key words and rejects pain or health claims, so the usual "it works" ads can\'t run. Buyers have also been burned by brands that promised everything and showed nothing.'],
+ insight:['Win by showing everything and promising nothing. Every ad ends on proof the shopper can check (a lab report for every batch, the full ingredient list, small batches made in the USA) instead of a claim.'],
+ did:['Built three buyer personas from the brand\'s reviews and sales: the Still-Active Regular, the Label Reader and the Pharmacy Shopper','Wrote compliance rules into the brief: banned words, no body-result claims, labels angled so restricted text can\'t be read','Adapted nine proven formats from wellness brands, swapping each claim for proof, plus a hook bank for video and copy'],
+ concepts:[['Great on the label','Bold type: better in the lab report.'],['Did this? Try this!','A habit on the left, the ritual on the right.'],['Still showing up at 6 a.m.?','An older active buyer, spoken to with respect.'],['Ingredient burst','Wait, your balm has turmeric too?!']],
+ shots:[],
+ creative:()=>G('Statics',[['qtopix-lab-report','Proof','Great on the label. Better in the lab report.'],['qtopix-did-this','Habit to ritual','Did this? Try this!'],['qtopix-6am','Respectful','Still showing up at 6 a.m.?'],['qtopix-miles','Metaphor','You put in the miles. Put in the ritual.'],['qtopix-turmeric','Ingredients','Wait, your balm has turmeric too?!'],['qtopix-3-reasons','Rational','3 reasons, no promises.'],['qtopix-mystery-balm','UGC style','I almost bought another mystery balm.']]),
+ learn:'In a restricted category, <em>proof</em> is both the compliance strategy and the creative strategy.'}
+,{id:'menswear',hero:['mannish-montana','The Montana.','A clean product hero with the story in the copy: the format most likely to scale for a premium menswear range.','Featured pick'],cardLab:'Agency client · Menswear',thumbs:['mannish-montana','mannish-jones'],label:'Agency client · Meta',title:'Premium menswear brand',
+ sub:'Outerwear, shirts and denim. I wrote the creative briefs, directed the designs with the designer, and manage the ad account.',tags:['Meta','Creative direction','Account management'],
+ m:[['5','statics shown'],['Brief','to launch']],
+ card:{m:[['5','statics'],['Brief','to launch']]},
+ did:['Wrote the creative briefs and directed each design with the team\'s designer','Manage the brand\'s Meta ad account'],
+ shots:[],
+ creative:()=>G('Statics',[['mannish-montana','Product','The Montana.'],['mannish-samuel','Product','The Samuel.'],['mannish-worn-in','Product','Worn in.'],['mannish-jones','Product','The Jones.'],['mannish-stack','Product','The Stack.']]),
+ learn:'A clear brief lets one designer ship a consistent, premium look across the whole range.'}
+,{id:'wonderskin',wide:true,cardLab:'Creative trial · Beauty',thumbs:['ws-blush-shades','ws-foundation-mashup-v2','ws-blush-swatch','ws-foundation-mashup-v1'],label:'Creative trial · Beauty · TikTok and Reels',title:'Wonderskin',
+ sub:'A trial project for a beauty brand: I chose the clips from creator footage, wrote the on-screen text and edited the cuts.',tags:['UGC editing','Hooks','On-screen copy','Trial project'],
+ m:[['3','edits'],['2','cuts of one story'],['27–59s','lengths']],
+ card:{m:[['3','edits'],['Trial','project']]},
+ did:['Chose the strongest moments from many creators\' footage','Wrote the on-screen text: the hook, each proof point and the end card','Edited a blush shade showcase and two versions of a foundation mashup to test length and casting'],
+ concepts:[['Blush shades','One creator swatches every shade, named on screen.'],['Foundation mashup, long','"I gave up on foundation. Then I tried this." 59 seconds of proof points.'],['Foundation mashup, tight','The same story in 46 seconds, with a more diverse cast.']],
+ shots:[],
+ creative:()=>G('Edits',[['ws-blush-shades.mp4','Blush shades · 27s','I can\'t believe this blush stain.'],['ws-foundation-mashup-v1.mp4','Foundation mashup · 59s','I gave up on foundation. Then I tried this.'],['ws-foundation-mashup-v2.mp4','Foundation mashup · 46s','The tighter cut.']]),
+ learn:'The same story, cut two ways, is a cheap test: length and casting can be judged on hook rate before scaling spend.'}];
+
+
+const tileCls=['c2','c3','c4','c5','c2','c3','c4','c5'];
+$('cards').innerHTML=C.map((c,i)=>{
+ const th=c.thumbs?`<div class="thumb trio">${c.thumbs.map(f=>`<img src="media/${f}.jpg" alt="" loading="lazy">`).join('')}</div>`
+  :`<div class="thumb"><div class="tile ${tileCls[i]}"><span class="tg">${c.label.split(' · ').slice(1).join(' · ')}</span><div><div class="big">${c.card.num}</div><div class="cap">${c.card.small}</div></div></div></div>`;
+ return `<a class="card${i===0||c.wide?' wide':''}" href="#${c.id}">${th}<div class="cmeta"><div><h3>${c.title}</h3><div class="lab">${c.cardLab}</div></div><div class="m">${c.card.m.map(m=>`<span><b>${m[0]}</b>${m[1]}</span>`).join('')}</div></div></a>`}).join('');
+
+const sec=(h,body,full)=>`<section class="sec${full?' full':''}"><h3>${h}</h3><div>${body}</div></section>`;
+function renderCase(c){
+ const i=C.indexOf(c),n=C[(i+1)%C.length];
+ $('caseHead').innerHTML=`<a class="back" href="#work">← All work</a><div class="kick">${c.label}</div><h1>${c.title}</h1><p class="lede">${c.sub}</p><div class="tags">${c.tags.map(t=>`<span>${t}</span>`).join('')}</div><div class="cnums">${c.m.map(m=>`<div><b>${m[0]}</b><span>${m[1]}</span></div>`).join('')}</div>`;
+ $('caseBody').innerHTML=`${c.challenge?sec('The challenge',c.challenge.map(p=>`<p>${p}</p>`).join('')):''}
+ ${c.insight?sec('The insight',c.insight.map(p=>`<p>${p}</p>`).join('')):''}
+ ${sec('What I did',`<ul>${c.did.map(x=>`<li>${x}</li>`).join('')}</ul>`)}
+ ${c.concepts?sec('Concepts',`<div class="cgrid">${c.concepts.map(x=>`<div><h4>${x[0]}</h4><p>${x[1]}</p></div>`).join('')}</div>`):''}
+ ${c.shots.length?sec('Results in Ads Manager',c.shots.map(s=>shot(...s)).join(''),true):''}
+ ${sec('The creative',c.creative?HERO(c.hero)+c.creative():ph,!!c.creative)}
+ <div class="learn dark"><span>Key learning</span><p>${c.learn}</p></div>
+ <div class="next"><a href="#work"><span>Back to</span>All work</a><a href="#${n.id}" style="text-align:right"><span>Next case study</span>${n.title} →</a></div>`;
+}
+
+$('stages').innerHTML=[
+ ['1','Unaware','I wasn\'t looking for anything.','Stop the scroll with identity and emotion, not product facts.','fbl-moments','A watch as a statement of faith: "For moments you can\'t rush."','Broad prospecting','hook rate, CPM'],
+ ['2','Problem aware','My facialist costs $200 a visit.','Name the pain in the buyer\'s own words, then hint at a way out.','vn-led-math-hook1','Opening line: "My facialist had a 6-week waitlist and wanted $200 a session."','Broad prospecting','hold rate, CTR'],
+ ['3','Solution aware','Do these balms actually work?','Show why this kind of solution, and this one, is the better choice.','qtopix-lab-report','Proof over promise: "Great on the label. Better in the lab report."','Prospecting and engagers','CTR, page conversion'],
+ ['4','Product aware','Is this brand worth it?','Remove the last doubt with reviews, guarantees and specifics.','fbl-text','A customer\'s own message: "Must be a blessed belt."','Retargeting visitors and add-to-carts','CPA, ROAS'],
+ ['5','Most aware','I want it. What\'s the deal?','Make acting now easy: the offer, the drop, the restock.','mtf-brown-clothesline','30% off the Brown Pride jersey, one line, no clutter.','Retargeting and past buyers','ROAS, AOV']
+].map(r=>`<div class="stage"><img src="media/${r[4]}.jpg" alt="${r[5]}" loading="lazy"><div class="sb"><span class="sn">Stage ${r[0]}</span><h3>${r[1]}</h3><q>${r[2]}</q><p><b style="color:var(--ink);font-weight:600">Creative job:</b> ${r[3]}</p><p>${r[5]}</p><div class="kpi"><b>${r[6]}</b> · judged on ${r[7]}</div></div></div>`).join('');
+$('steps').innerHTML=[['Research','Mine reviews, comments and competitors\' longest-running ads for the words customers use.'],
+ ['Brief','Turn the insight into a testable idea: audience, angle, 3–5 hooks, format and a hypothesis.'],
+ ['Produce','Ship variety fast with designers, editors, creators and AI tools, built for each platform.'],
+ ['Test','A separate testing budget, fixed thresholds and a clear call: scale, iterate or kill.'],
+ ['Scale','Move winners into broad campaigns, raise budgets steadily and fix the funnel.']].map(s=>`<div class="step"><h3>${s[0]}</h3><p>${s[1]}</p></div>`).join('');
+
+$('tools').innerHTML=['Meta Ads','Google Ads','TikTok Ads','Amazon Ads','GA4','AppsFlyer','Mixpanel','Motion','Foreplay','TrendTrack','Higgsfield','Claude','ChatGPT','Looker Studio','Klaviyo','Figma','CapCut'].map(t=>`<span>${t}</span>`).join('');
+
+$('tl').innerHTML=[['Jul 2026 – now','Paid Media & Creative Strategist, Revenue Labs','10 DTC brands, $120K+ monthly spend, 3x–9x ROAS.'],
+ ['Jun – Aug 2026','Creative Strategist, VogueNow Skin','3x ROAS, 3% CTR, $35 CPA on Meta, TikTok and Amazon.'],
+ ['2025 – 2026','Growth & Performance Marketing Manager, PricePally','900%+ ROAS; site conversion lifted from 10% to 24%.'],
+ ['2023 – 2025','Head of Growth, Heyfood (YC W22)','Customers grew from under 20K to 100K+ in 12 months; ROAS +150%, CAC −50%.'],
+ ['2021 – 2023','Head of Marketing, Sendme (YC W22)','First marketing hire; ₦0 to ₦400M+ (about $975K) monthly revenue with a team of 6.']].map(r=>`<div><span>${r[0]}</span><div><b>${r[1]}</b><p>${r[2]}</p></div></div>`).join('');
+
+function route(){
+ const h=location.hash.slice(1),c=C.find(x=>x.id===h);
+ if(c){$('home').hidden=true;$('case').hidden=false;renderCase(c);document.title=c.title+' | Courage Afemije';window.scrollTo(0,0);return}
+ const wasCase=!$('case').hidden;
+ $('case').hidden=true;$('home').hidden=false;document.title='Courage Afemije | Paid Media & Creative Strategist';
+ const t=h&&document.getElementById(h);
+ if(t)t.scrollIntoView();else if(wasCase)window.scrollTo(0,0);
+}
+addEventListener('hashchange',route);route();
+
+const cp=$('copy');
+cp.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('afemijecourage@gmail.com');cp.textContent='Copied ✓'}catch(e){cp.textContent='afemijecourage@gmail.com'}setTimeout(()=>cp.textContent='Copy email',2500)});
+document.addEventListener('play',e=>{const v=e.target;if(v.tagName!=='VIDEO'||!v.closest('.gal'))return;document.querySelectorAll('.gal video').forEach(o=>{if(o!==v)o.pause()})},true);
+}
+</script>
+</body>
 </html>
